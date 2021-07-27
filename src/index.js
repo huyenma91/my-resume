@@ -14,10 +14,10 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname,'build')));
 
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'matkhaulagi',
-    database: 'loginsystem',
+    host: 'us-cdbr-east-04.cleardb.com',
+    user: 'b8ed52af29ac20',
+    password: '432d8606',
+    database: 'heroku_537477bd9f98412',
 })
 // app.get("/",(req,res)=>{
 //     const sqlInsert = "INSERT INTO user (username, password) VALUES ('phuong','123');"
