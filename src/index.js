@@ -7,12 +7,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
 
-// app.use(
-//   cors({
-//     origin: ["http://localhost:3000"],
-//     credentials: true
-//   })
-// );
 app.use(cors());
 
 app.use(express.json());
@@ -76,8 +70,6 @@ app.post('/register', async (req, res) => {
 app.post('/login', async (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
-    // const { username, password } = req.body
-
     const passwordHash = await db.query("SELECT * FROM user WHERE username = ?", [username], async (err, result, fields) => {
         if (err) {
             res.send(err);
@@ -149,12 +141,12 @@ app.post('/login', async (req, res) => {
 //     })
 // }
 
-app.get('*',(req,res)=>{
+app.get('/*',(req,res)=>{
     res.sendFile(path.join(__dirname, 'build/index.html'));
     console.log('______')
     console.log('Path : ',path.join(__dirname, 'build/index.html'))
 })
-app.listen(3001, () => {
+app.listen(process.env.PORT || 3001, () => {
     console.log('run on port 3001')
 });
 
