@@ -1,0 +1,136 @@
+    @import 'colors';
+    @import 'media-queries';
+    .cv {
+        background-image: url("https://3.bp.blogspot.com/-piZWCW2uUbg/W2fPXxkWZgI/AAAAAAAAOu0/eydmMjTIqcwLMHEEr2H7imqoRTxMw4o9QCLcBGAs/s1600/among_trees_night_dribbble.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        &_container {
+            margin: 0 auto;
+            height: 100%;
+            z-index: 1;
+            max-width: 1200px;
+            padding-right: 24px;
+            padding-left: 24px;
+            &_firstRow {
+                content: "";
+                clear: both;
+                display: table;
+                width: 100%;
+                &_leftColumn {
+                    float: left;
+                    width: 40%;
+                    margin-left: 5%;
+                    margin-right: 5%;
+                    margin-top: 50px;
+                    @include tablet {
+                        width: 100%;
+                    }
+                    &_titleLine {
+                        margin-top: 10px;
+                        height: 1px;
+                        background: grey;
+                    }
+                }
+                &_rightColumn {
+                    float: left;
+                    width: 40%;
+                    margin-left: 5%;
+                    margin-right: 5%;
+                    margin-top: 50px;
+                    @include tablet {
+                        width: 100%;
+                    }
+                    &_titleLine {
+                        margin-top: 10px;
+                        height: 1px;
+                        background: grey;
+                    }
+                    ul {
+                        list-style: none;
+                    }
+                }
+            }
+            &_secondRow {
+                content: "";
+                clear: both;
+                display: table;
+                width: 100%;
+                &_leftColumn {
+                    float: left;
+                    width: 40%;
+                    margin-left: 5%;
+                    margin-right: 5%;
+                    margin-top: 50px;
+                    @include tablet {
+                        width: 100%;
+                    }
+                    &_titleLine {
+                        margin-top: 10px;
+                        height: 1px;
+                        background: grey;
+                    }
+                }
+                &_rightColumn {
+                    float: left;
+                    width: 40%;
+                    margin-left: 5%;
+                    margin-right: 5%;
+                    margin-top: 50px;
+                    @include tablet {
+                        width: 100%;
+                    }
+                    &_titleLine {
+                        margin-top: 10px;
+                        height: 1px;
+                        background: grey;
+                    }
+                    ul {
+                        list-style: none;
+                    }
+                }
+            }
+            &_thirdRow {
+                content: "";
+                clear: both;
+                display: table;
+                width: 100%;
+                &_leftColumn {
+                    float: left;
+                    width: 40%;
+                    margin-left: 5%;
+                    margin-right: 5%;
+                    margin-top: 50px;
+                    @include tablet {
+                        width: 100%;
+                    }
+                    &_titleLine {
+                        margin-top: 10px;
+                        height: 1px;
+                        background: grey;
+                    }
+                }
+                &_rightColumn {
+                    float: left;
+                    width: 40%;
+                    margin-left: 5%;
+                    margin-right: 5%;
+                    margin-top: 50px;
+                    @include tablet {
+                        width: 100%;
+                    }
+                    &_titleLine {
+                        margin-top: 10px;
+                        height: 1px;
+                        background: grey;
+                    }
+                    ul {
+                        list-style: none;
+                    }
+                }
+            }
+            @include tablet {
+                grid-template-columns: 1fr;
+                height: 100%;
+            }
+        }
+    }
