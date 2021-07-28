@@ -5,8 +5,8 @@
     "main": "index.js",
     "scripts": {
         "babelStart": "nodemon --exec babel-node -r dotenv/config ./src/server.js",
-        "start": "node src/index.js",
-        "devStart": "nodemon -r dotenv/config src/index.js",
+        "start": "nodemon -r dotenv/config src/index.js",
+        "devStart": "node src/index.jss",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
