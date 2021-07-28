@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname,'build')));
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
     host: 'us-cdbr-east-04.cleardb.com',
     user: 'b8ed52af29ac20',
     password: '432d8606',
@@ -35,10 +35,11 @@ const db = mysql.createConnection({
 //     })
 // });
 // app.use(bodyParser.json());
-db.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected!");
-  });
+
+// db.connect(function(err) {
+//     if (err) throw err;
+//     console.log("Connected!");
+//   });
 
 app.post('/api/register', async (req, res) => {
     const username = req.body.username;
