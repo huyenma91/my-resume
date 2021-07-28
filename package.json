@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "babelStart": "npx nodemon --exec npx babel-node src/index.js",
+        "babelStart": "nodemon --exec babel-node -r dotenv/config ./src/server.js",
         "start": "node src/index.js",
         "devStart": "nodemon -r dotenv/config src/index.js",
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,5 +23,6 @@
         "jsonwebtoken": "^8.5.1",
         "mysql": "^2.18.1",
         "nodemon": "^2.0.7"
-    }
+    },
+    "homepage": "."
 }

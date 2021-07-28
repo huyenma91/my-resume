@@ -5,6 +5,7 @@ const express = require('express');
 const mysql = require('mysql');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const { config } = require('process');
 const app = express();
 
 app.use(cors());
@@ -19,6 +20,14 @@ const db = mysql.createConnection({
     password: '432d8606',
     database: 'heroku_537477bd9f98412',
 })
+
+// const db = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: 'matkhaulagi',
+//     database: 'loginsystem',
+// })
+
 // app.get("/",(req,res)=>{
 //     const sqlInsert = "INSERT INTO user (username, password) VALUES ('phuong','123');"
 //     db.query(sqlInsert,(err,result)=>{
@@ -31,7 +40,7 @@ db.connect(function(err) {
     console.log("Connected!");
   });
 
-app.post('/register', async (req, res) => {
+app.post('/api/register', async (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
     // const { username, password } = req.body
@@ -67,7 +76,7 @@ app.post('/register', async (req, res) => {
     })
 })
 
-app.post('/login', async (req, res) => {
+app.post('/api/login', async (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
     const passwordHash = await db.query("SELECT * FROM user WHERE username = ?", [username], async (err, result, fields) => {
@@ -141,11 +150,15 @@ app.post('/login', async (req, res) => {
 //     })
 // }
 
-app.get('/*',(req,res)=>{
-    res.sendFile(path.join(__dirname, 'build/index.html'));
-    console.log('______')
-    console.log('Path : ',path.join(__dirname, 'build/index.html'))
-})
+// app.get('/*',(req,res)=>{
+//     res.sendFile(path.join(__dirname, 'build/index.html'));
+//     console.log('______')
+//     console.log('Path : ',path.join(__dirname, 'build/index.html'))
+// })
+
+app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  });
 app.listen(process.env.PORT || 3001, () => {
     console.log('run on port 3001')
 });
